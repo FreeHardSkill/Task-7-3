@@ -27,7 +27,7 @@ public class AdminController {
     }
 
     @GetMapping("/{id}")
-    public String getUserFromId(@PathVariable("id")long id, Model model) {
+    public String getUserById(@PathVariable("id")long id, Model model) {
         model.addAttribute("user",userService.findById(id));
         return "admin/id";
     }
