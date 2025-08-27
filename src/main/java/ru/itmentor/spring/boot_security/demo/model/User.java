@@ -45,7 +45,7 @@ public class User{
     private LocalDate birthDay;
 
     @NotEmpty(message = "У пользователя должна быть хотя бы одна роль")
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
