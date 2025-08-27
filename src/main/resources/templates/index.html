@@ -1,11 +1,84 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
 <head>
-    <title>Spring Security Example</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Главная</title>
+    <style>
+        :root {
+            --bg: #f6f7fb;
+            --card: #ffffff;
+            --ink: #111827;
+            --muted: #6b7280;
+            --primary: #2563eb;
+            --ring: rgba(37, 99, 235, .25);
+            --border: #e5e7eb;
+            --radius: 16px;
+        }
+
+        body {
+            margin: 0; padding: 0;
+            font-family: "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif;
+            background: radial-gradient(1200px 800px at 10% -10%, #e8efff, transparent), var(--bg);
+            color: var(--ink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: 0 10px 30px rgba(17, 24, 39, .08);
+            padding: 40px;
+            text-align: center;
+            max-width: 420px;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin: 0 0 12px;
+            font-weight: 800;
+        }
+
+        p {
+            font-size: 15px;
+            color: var(--muted);
+            margin-bottom: 24px;
+        }
+
+        .btn {
+            appearance: none;
+            border: 1px solid var(--primary);
+            background: var(--primary);
+            color: #fff;
+            padding: 14px 24px;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background .2s, transform .06s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: #1e4ed8;
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+    </style>
 </head>
 <body>
-<h1>Welcome to Index PAGE!</h1>
-
-
+<div class="card">
+    <h1>Добро пожаловать!</h1>
+    <p>Рады видеть вас в нашем приложении.<br/>Пожалуйста, войдите в систему.</p>
+    <a class="btn" th:href="@{/login}">Войти</a>
+</div>
 </body>
 </html>
